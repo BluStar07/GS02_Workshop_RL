@@ -117,7 +117,7 @@ public class GameManager : InputListener {
         InitCharacters();
         SetCameraCharacters(true);
 
-        GetAllCollectibles();
+        //GetAllCollectibles();
         GetAllCheckpoints();
     }
 
@@ -274,23 +274,23 @@ public class GameManager : InputListener {
 		_fixedDeltaTime = Time.fixedDeltaTime;
 	}
 
-    public void GetAllCollectibles()
-    {
-        collectiblesMaxCount = FindObjectsOfType<Collectible>().Length;
+    //public void GetAllCollectibles()
+    //{
+    //    collectiblesMaxCount = FindObjectsOfType<Collectible>().Length;
 
-        if (mainCanvas)
-            mainCanvas.SetCollectiblesText(collectiblesCount, collectiblesMaxCount);
-    }
+    //    if (mainCanvas)
+    //        mainCanvas.SetCollectiblesText(collectiblesCount, collectiblesMaxCount);
+    //}
 
-    public void CollectibleCollected()
-    {
-        collectiblesCount++;
-        mainCanvas.SetCollectiblesText(collectiblesCount, collectiblesMaxCount);
-        mainCanvas.CollectibleCollected();
+    //public void CollectibleCollected()
+    //{
+    //    collectiblesCount++;
+    //    mainCanvas.SetCollectiblesText(collectiblesCount, collectiblesMaxCount);
+    //    mainCanvas.CollectibleCollected();
 
-        if (collectiblesCount == collectiblesMaxCount)
-            LevelEnd();
-    }
+    //    if (collectiblesCount == collectiblesMaxCount)
+    //        LevelEnd();
+    //}
 
     #endregion
 
