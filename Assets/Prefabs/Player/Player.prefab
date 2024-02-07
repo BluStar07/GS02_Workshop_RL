@@ -18428,7 +18428,7 @@ MonoBehaviour:
   _speedLerp: 0
   _leftRight: 1
   uTurnDelay: 0.2
-  _uTurn: 0
+  _uTurn: 1
   _rigidbodyVelocity: {x: 0, y: 0}
   environmentLayer:
     serializedVersion: 2
@@ -18512,9 +18512,9 @@ MonoBehaviour:
   maximumEdgeDetectionDistance: 1.5
   isFrozen: 0
   _isDashing: 0
-  maxDashCount: 0
-  DashCount: 0
-  DashStrength: 8
+  maxDashCount: 2
+  dashCount: 0
+  dashStrength: 50
   hit: 0
   _isDead: 0
   resurrectDelay: 1

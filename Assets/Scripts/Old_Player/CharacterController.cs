@@ -168,8 +168,8 @@ public partial class CharacterController : InputListener
     [SerializeField] private bool _isDashing = false;
     public bool isDashing { get { return _isDashing; } }
     [SerializeField] private int maxDashCount;
-    [SerializeField] private int DashCount;
-    [SerializeField] private float DashStrength = 10f;
+    [SerializeField] private int dashCount;
+    [SerializeField] private float dashStrength = 50f;
 
     [Header("COMBAT")]
     [Space(10)]
@@ -279,6 +279,7 @@ public partial class CharacterController : InputListener
     private Coroutine uTurnCoroutine;
     private Coroutine hitCoroutine;
     private Coroutine resurrectCoroutine;
+    private Coroutine dashCoolDown;
 
     #region UNITY_BASED
 
@@ -1061,12 +1062,43 @@ public partial class CharacterController : InputListener
         if (hit)
             return;
 
-        Debug.Log("Do a Dash");
+        int orientation;
+        if (leftStickAxisLerped.x > 0)
+            orientation = 1;
+        else
+            orientation = -1;
 
-        Debug.Log(leftRight);
 
-        //SetRigidbodyVelocity(new Vector3(_rigid.velocity.x * 2 * leftRight * DashStrength, 0f, 0f));
+        if (CanDash())
+        {
+            SetRigidbodyVelocity(new Vector3(orientation * dashStrength, 0f, 0f));
 
+            if (dashCoolDown != null)
+                StopCoroutine(dashCoolDown);
+            StartCoroutine(DashCooldDown());
+        }
+    }
+
+    private bool CanDash()
+    {
+        if (dashCount < maxDashCount)
+        {
+            dashCount++;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private IEnumerator DashCooldDown()
+    {
+        while (dashCount > 0)
+        {
+            yield return new WaitForSeconds(1);
+            dashCount--;
+        }
     }
 
     #endregion
