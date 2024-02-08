@@ -64,7 +64,7 @@ public class GameManagerEditor : Editor {
         if (Application.isPlaying)
             return;
 
-        if (gameManager)
-            gameManager.GetAllCollectibles();
+        //if (gameManager)
+        //    gameManager.GetAllCollectibles();
     }
 }
