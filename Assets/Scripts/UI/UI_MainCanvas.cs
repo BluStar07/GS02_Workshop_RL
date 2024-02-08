@@ -26,12 +26,12 @@ public class UI_MainCanvas : MonoBehaviour {
     [SerializeField] private UI_Panel_Players _playersPanel;
     public UI_Panel_Players playersPanel { get { return _playersPanel; } }
 
-    [Header("COLLECTIBLES")]
-    [Space(10)]
-    [SerializeField] private TextMeshProUGUI collectiblesCountText;
-    [SerializeField] private Animation collectiblesCountAnimation;
-    [SerializeField] private TextMeshProUGUI collectiblesMaxCountText;
-    [SerializeField] private ParticleSystem collectibleCollectedFX;
+    //[Header("COLLECTIBLES")]
+    //[Space(10)]
+    //[SerializeField] private TextMeshProUGUI collectiblesCountText;
+    //[SerializeField] private Animation collectiblesCountAnimation;
+    //[SerializeField] private TextMeshProUGUI collectiblesMaxCountText;
+    //[SerializeField] private ParticleSystem collectibleCollectedFX;
 
     private void Awake()
     {
@@ -54,22 +54,22 @@ public class UI_MainCanvas : MonoBehaviour {
 
     private void Init()
     {
-        collectiblesCountText.SetText("0");
-        levelEndPanel.SetActive(false);
+        //collectiblesCountText.SetText("0");
+        //levelEndPanel.SetActive(false);
     }
 
-    public void SetCollectiblesText(int count, int maxCount)
-    {
-        collectiblesCountText.SetText(count.ToString());
-        collectiblesMaxCountText.SetText("/" + maxCount);
-    }
+    //public void SetCollectiblesText(int count, int maxCount)
+    //{
+    //    collectiblesCountText.SetText(count.ToString());
+    //    collectiblesMaxCountText.SetText("/" + maxCount);
+    //}
 
-    public void CollectibleCollected ()
-    {
-        collectiblesCountAnimation.Stop();
-        collectiblesCountAnimation.Play();
-        collectibleCollectedFX.Play();
-    }
+    //public void CollectibleCollected ()
+    //{
+    //    collectiblesCountAnimation.Stop();
+    //    collectiblesCountAnimation.Play();
+    //    collectibleCollectedFX.Play();
+    //}
 
     public void SetPause(bool pause)
     {
@@ -79,6 +79,5 @@ public class UI_MainCanvas : MonoBehaviour {
     public void LevelEnd()
     {
         levelEndPanel.SetActive(true);
-        //playersPanel.CheckPlayerPanelsVisibility();
     }
 }

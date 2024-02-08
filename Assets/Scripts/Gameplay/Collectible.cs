@@ -70,7 +70,7 @@ public class Collectible : MonoBehaviour {
         if (particleSystem)
             particleSystem.Stop();
 
-        gameManager.CollectibleCollected();
+        //gameManager.CollectibleCollected();
 
         Instantiate(collectedFXPrefab, transform);
 
