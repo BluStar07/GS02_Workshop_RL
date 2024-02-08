@@ -292,6 +292,7 @@ public partial class CharacterController : InputListener
 
     private void Update()
     {
+        //Debug.Log("updqtq");
         GetInputs();
     }
 
@@ -340,7 +341,7 @@ public partial class CharacterController : InputListener
 
         player = ReInput.players.GetPlayer(playerID);
 
-        InitAllInputs(player);
+        InitAllInputs(player); 
 
         OnSetPlayer(playerID);
     }
@@ -432,11 +433,13 @@ public partial class CharacterController : InputListener
         base.GetButtonUp(data);
     }
 
+
+    float previousValue;
     protected override void GetAxis(InputActionEventData data)
     {
         // All inputs locked
-        if (lockAllInputs)
-            return;
+        //if (lockAllInputs)
+        //    return;
 
         switch (data.actionName)
         {
@@ -449,14 +452,22 @@ public partial class CharacterController : InputListener
                 break;
         }
 
+        //Debug.Log(_leftStickAxis.x);
+
+        if(_leftStickAxis.x != previousValue)
+        {
+            Debug.LogError(previousValue + ", " + _leftStickAxis.x);
+            previousValue = _leftStickAxis.x;
+        }
+
         base.GetAxis(data);
     }
 
-    private void GetInputs()
+    private void GetInputs() 
     {
         // All inputs locked
-        if (lockAllInputs)
-            return;
+        //if (lockAllInputs)
+        //    return;
 
         if (leftStickAxis.magnitude > 1f)
         {
@@ -529,7 +540,7 @@ public partial class CharacterController : InputListener
         // Stop motion if player moves towards a wall
         //if ((wallAngle > maximumGroundAngle) && (leftStickAxisLerped.x * wallHit.normal.x < 0f))
         //{
-        //    _isMoving = false;
+        //    _isMoving = false; 
 
         //    if (isGrounded)
         //        SetRigidbodyVelocity(Vector3.zero);
@@ -1063,10 +1074,10 @@ public partial class CharacterController : InputListener
             return;
 
         int orientation;
-        if (leftStickAxisLerped.x > 0)
+        if (rigid.velocity.x > 0)
             orientation = 1;
         else
-            orientation = -1;
+            orientation = -1; 
 
 
         if (CanDash())
@@ -1097,7 +1108,7 @@ public partial class CharacterController : InputListener
         while (dashCount > 0)
         {
             yield return new WaitForSeconds(1);
-            dashCount--;
+            dashCount = 0;
         }
     }
 

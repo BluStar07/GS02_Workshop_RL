@@ -55,7 +55,8 @@ MonoBehaviour:
   - RightStickX
   - RightStickY
   _cam: {fileID: 20599674064362618}
-  _characters: []
+  _characters:
+  - {fileID: 0}
   cameraColliderLeft: {fileID: 65901880028905702}
   cameraColliderRight: {fileID: 65222862531779534}
   cameraColliderUp: {fileID: 65681856416863340}
@@ -76,8 +77,8 @@ MonoBehaviour:
   followLerpRate: 1
   inputOffset: {x: 0, y: 0}
   inputOffsetLerpRate: 4
-  _minFrame: {x: 24, y: 11.20436}
-  _maxFrame: {x: 48, y: 22.40872}
+  _minFrame: {x: 19.918863, y: 11.20436}
+  _maxFrame: {x: 39.837727, y: 22.40872}
   _minCharactersFrame: {x: 8, y: 4.5}
   _charactersEdgeSpacing: {x: 4, y: 4}
   currentZoom: 1
@@ -93,6 +94,7 @@ MonoBehaviour:
   downCameraDeathTriggersYOffset: 2
   blur: {fileID: 114777849153905310}
   drawGizmos: 1
+  yOffset: 3
 --- !u!1 &1414425531570764
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +151,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 2, y: 13.70436, z: 4}
-  m_Center: {x: -13.5, y: -0.75, z: 0}
+  m_Center: {x: -11.459432, y: -0.75, z: 0}
 --- !u!65 &65780622874902404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -170,7 +172,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 2, y: 13.70436, z: 4}
-  m_Center: {x: 13.5, y: -0.75, z: 0}
+  m_Center: {x: 11.459432, y: -0.75, z: 0}
 --- !u!65 &65298668625472450
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -190,7 +192,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 29, y: 2, z: 4}
+  m_Size: {x: 24.918863, y: 2, z: 4}
   m_Center: {x: 0, y: 7.10218, z: 0}
 --- !u!65 &65345973046895356
 BoxCollider:
@@ -211,7 +213,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 29, y: 2, z: 4}
+  m_Size: {x: 24.918863, y: 2, z: 4}
   m_Center: {x: 0, y: -8.6021805, z: 0}
 --- !u!114 &114958627567661392
 MonoBehaviour:
@@ -280,7 +282,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5, y: 13.20436, z: 4}
-  m_Center: {x: -12.25, y: -1, z: 0}
+  m_Center: {x: -10.209432, y: -1, z: 0}
 --- !u!65 &65222862531779534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -301,7 +303,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5, y: 13.20436, z: 4}
-  m_Center: {x: 12.25, y: -1, z: 0}
+  m_Center: {x: 10.209432, y: -1, z: 0}
 --- !u!65 &65681856416863340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -321,7 +323,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 25, y: 0.5, z: 4}
+  m_Size: {x: 20.918863, y: 0.5, z: 4}
   m_Center: {x: 0, y: 5.85218, z: 0}
 --- !u!1 &1919310479599546
 GameObject:
@@ -350,13 +352,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919310479599546}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15.391864}
+  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
+  m_LocalPosition: {x: 0, y: 0, z: -12.013913}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4832121097916420}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
 --- !u!20 &20599674064362618
 Camera:
   m_ObjectHideFlags: 0
@@ -390,7 +392,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 40
+  field of view: 50
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
