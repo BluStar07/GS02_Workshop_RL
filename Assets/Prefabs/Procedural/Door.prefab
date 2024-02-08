@@ -150,4 +150,3 @@ MonoBehaviour:
   currentSceneIndex: 0
   doorPositions: 0
   nextRoomPos: {x: 0, y: 0}
-  hasBeenSet: 0

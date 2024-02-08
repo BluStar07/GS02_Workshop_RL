@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 using Scene = UnityEngine.SceneManagement.Scene;
 
 public class DoorBehaviour : MonoBehaviour
@@ -15,54 +14,30 @@ public class DoorBehaviour : MonoBehaviour
 
     public int sceneToLoadIndex;
     public int currentSceneIndex;
-    private bool isLoadingScene;
-    private bool canLoadScene = true;
     public DoorPositions doorPositions;
-    public Vector2Int nextRoomPos = new Vector2Int(0,0);
-    public bool hasBeenSet = false;
+    public Vector2Int nextRoomPos = new Vector2Int(0, 0);
+    private bool canLoadScene = true;
 
-    private void Start()
-    {
-        //currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-    }
-
+    //Enter in door
     private void OnTriggerEnter(Collider other)
     {
-        if (!isLoadingScene && other.GetComponent<CharacterController>() && canLoadScene)
+        if (other.GetComponent<CharacterController>() && canLoadScene)
         {
             canLoadScene = false;
             LoadAndSwitchScene();
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         canLoadScene = true;
     }
 
+    //Load scene
     private void LoadAndSwitchScene()
     {
-        // Check if the scene is already loaded
         Scene targetScene = SceneManager.GetSceneAt(sceneToLoadIndex);
 
-        if (!targetScene.IsValid() || !targetScene.isLoaded)
-        {
-            StartCoroutine(LoadSceneAndSwitchCoroutine());
-        }
-        else
-        {
-            StartCoroutine(SwitchSceneCoroutine(targetScene));
-        }
-    }
-
-    private IEnumerator LoadSceneAndSwitchCoroutine()
-    {
-        isLoadingScene = true;
-
-        yield return SceneManager.LoadSceneAsync(sceneToLoadIndex, LoadSceneMode.Additive);
-
-        Scene targetScene = SceneManager.GetSceneAt(sceneToLoadIndex);
-
+        // Check if the scene exist and is already loaded
         if (targetScene.IsValid() && targetScene.isLoaded)
         {
             DisableCurrentScene();
@@ -70,27 +45,11 @@ public class DoorBehaviour : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Failed to load scene! Scene name: " + targetScene.name);
+            Debug.LogError("Scene doesnt exist or is not loaded yet");
         }
-
-        isLoadingScene = false;
     }
 
-    private IEnumerator SwitchSceneCoroutine(Scene targetScene)
-    {
-        isLoadingScene = true;
-        DisableCurrentScene();
-
-        while (!targetScene.isLoaded)
-        {
-            yield return null;
-        }
-
-        ActivateSceneObject(targetScene);
-
-        isLoadingScene = false;
-    }
-
+    //Show target scene
     private void ActivateSceneObject(Scene scene)
     {
         GameObject[] rootGameObjects = scene.GetRootGameObjects();
@@ -101,6 +60,7 @@ public class DoorBehaviour : MonoBehaviour
         HUD_MapBehaviour.instance.SetActiveRoom(nextRoomPos);
     }
 
+    //Hide current scene
     private void DisableCurrentScene()
     {
         GameObject[] rootGameObjects = SceneManager.GetSceneAt(currentSceneIndex).GetRootGameObjects();

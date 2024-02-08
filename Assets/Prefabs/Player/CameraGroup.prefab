@@ -77,8 +77,8 @@ MonoBehaviour:
   followLerpRate: 1
   inputOffset: {x: 0, y: 0}
   inputOffsetLerpRate: 4
-  _minFrame: {x: 16, y: 9}
-  _maxFrame: {x: 39.837727, y: 22.408722}
+  _minFrame: {x: 16.007381, y: 9.000001}
+  _maxFrame: {x: 39.856106, y: 22.408722}
   _minCharactersFrame: {x: 8, y: 4.5}
   _charactersEdgeSpacing: {x: 4, y: 4}
   currentZoom: 1
@@ -93,7 +93,7 @@ MonoBehaviour:
   cameraDeathTriggersThickness: 2
   downCameraDeathTriggersYOffset: 2
   blur: {fileID: 114777849153905310}
-  drawGizmos: 1
+  drawGizmos: 0
   yOffset: 5
 --- !u!1 &1414425531570764
 GameObject:
