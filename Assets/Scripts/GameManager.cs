@@ -127,7 +127,7 @@ public class GameManager : InputListener {
         for (int i = 0; i < maxPlayersCount; i++)
         {
             players.Add(ReInput.players.GetPlayer(i));
-            //InitAllInputs(players[i]);
+            InitAllInputs(players[i]);
         }
     }
 

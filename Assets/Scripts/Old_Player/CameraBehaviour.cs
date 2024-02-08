@@ -116,10 +116,6 @@ public partial class CameraBehaviour : InputListener {
     [Space(10)]
     [SerializeField] private bool drawGizmos = true;
 
-    [Space(10)]
-    [SerializeField] private float yOffset;
-
-
     // Singletons
     private GameManager _gameManager;
     private GameManager gameManager
@@ -280,7 +276,7 @@ public partial class CameraBehaviour : InputListener {
         {
             // Unsubscribe from "first" player inputs
             if (characters.Count > 0)
-                //UnsubscribeAllInputs(characters[0].GetPlayer()); 
+                UnsubscribeAllInputs(characters[0].GetPlayer());
 
             // Unsubscribe from all characters  events
             for (int i = 0; i < characters.Count; i++)
@@ -301,7 +297,7 @@ public partial class CameraBehaviour : InputListener {
         // Input offset can only be triggered by the first player alive on the characters list
         if (characters.Count > 0)
         {
-            //InitAllInputs(characters[0].GetPlayer());
+            InitAllInputs(characters[0].GetPlayer());
             mainCanvas.playersPanel.SetPlayerCamera(characters[0].playerID);
         }
 
@@ -417,7 +413,7 @@ public partial class CameraBehaviour : InputListener {
         // Lerp input offset
         inputOffset = Vector2.Lerp(inputOffset, targetInputOffset, instantPos ? 1f : inputOffsetLerpRate * gameManager.deltaTime);
 
-        targetPosition += inputOffset + new Vector2(0,yOffset);
+        targetPosition += inputOffset;
 
         // Final output
         Vector2 minPos = minWorldLimits + currentFrame / 2f;

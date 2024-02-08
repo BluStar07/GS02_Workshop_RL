@@ -18512,7 +18512,7 @@ MonoBehaviour:
   maximumEdgeDetectionDistance: 1.5
   isFrozen: 0
   _isDashing: 0
-  maxDashCount: 1
+  maxDashCount: 2
   dashCount: 0
   dashStrength: 50
   hit: 0
