@@ -5342,7 +5342,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c6d3c4213db4ae640accc89b7b26ec7e, type: 2}
+  - {fileID: 2100000, guid: b96376ef24c829d4898e41c4bff4d603, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18325,7 +18325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934258854783536}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18404,6 +18404,7 @@ MonoBehaviour:
   buttonDownInputs:
   - A
   - Back
+  - RB
   buttonUpInputs:
   - A
   axisInputs:
@@ -18417,6 +18418,7 @@ MonoBehaviour:
   _leftStickAxisLerped: {x: 0, y: 0}
   leftStickMagnitudeLerped: 0
   buttonA: 0
+  buttonRB: 0
   _isMoving: 0
   _minSpeed: 1
   _maxSpeed: 8
@@ -18426,7 +18428,7 @@ MonoBehaviour:
   _speedLerp: 0
   _leftRight: 1
   uTurnDelay: 0.2
-  _uTurn: 0
+  _uTurn: 1
   _rigidbodyVelocity: {x: 0, y: 0}
   environmentLayer:
     serializedVersion: 2
@@ -18509,6 +18511,10 @@ MonoBehaviour:
   minimumEdgeDetectionDistance: 0.5
   maximumEdgeDetectionDistance: 1.5
   isFrozen: 0
+  _isDashing: 0
+  maxDashCount: 2
+  dashCount: 0
+  dashStrength: 50
   hit: 0
   _isDead: 0
   resurrectDelay: 1

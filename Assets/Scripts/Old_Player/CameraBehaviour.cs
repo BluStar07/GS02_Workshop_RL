@@ -116,6 +116,9 @@ public partial class CameraBehaviour : InputListener {
     [Space(10)]
     [SerializeField] private bool drawGizmos = true;
 
+    [Space(10)]
+    [SerializeField] private float yOffset;
+
     // Singletons
     private GameManager _gameManager;
     private GameManager gameManager
@@ -413,7 +416,7 @@ public partial class CameraBehaviour : InputListener {
         // Lerp input offset
         inputOffset = Vector2.Lerp(inputOffset, targetInputOffset, instantPos ? 1f : inputOffsetLerpRate * gameManager.deltaTime);
 
-        targetPosition += inputOffset;
+        targetPosition += inputOffset + new Vector2(0, yOffset);
 
         // Final output
         Vector2 minPos = minWorldLimits + currentFrame / 2f;
