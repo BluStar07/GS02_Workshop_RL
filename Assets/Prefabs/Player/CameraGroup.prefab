@@ -69,7 +69,7 @@ MonoBehaviour:
   _rightStickDeadZone: 0.2
   _rightStickAxisLerped: {x: 0, y: 0}
   rightStickMagnitudeLerped: 0
-  positionOffset: {x: 0, y: 0.5}
+  positionOffset: {x: 0, y: 5}
   positionLerpRate: 4
   followVector: {x: 0, y: 0}
   maxFollowVelocity: {x: 4, y: 2.25}
@@ -77,8 +77,8 @@ MonoBehaviour:
   followLerpRate: 1
   inputOffset: {x: 0, y: 0}
   inputOffsetLerpRate: 4
-  _minFrame: {x: 19.918863, y: 11.20436}
-  _maxFrame: {x: 39.837727, y: 22.40872}
+  _minFrame: {x: 16.88889, y: 9.5}
+  _maxFrame: {x: 39.837727, y: 22.408722}
   _minCharactersFrame: {x: 8, y: 4.5}
   _charactersEdgeSpacing: {x: 4, y: 4}
   currentZoom: 1
@@ -93,7 +93,7 @@ MonoBehaviour:
   cameraDeathTriggersThickness: 2
   downCameraDeathTriggersYOffset: 2
   blur: {fileID: 114777849153905310}
-  drawGizmos: 1
+  drawGizmos: 0
   yOffset: 3
 --- !u!1 &1414425531570764
 GameObject:
@@ -150,8 +150,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 13.70436, z: 4}
-  m_Center: {x: -11.459432, y: -0.75, z: 0}
+  m_Size: {x: 2, y: 12, z: 4}
+  m_Center: {x: -9.944445, y: -0.75, z: 0}
 --- !u!65 &65780622874902404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -171,8 +171,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 13.70436, z: 4}
-  m_Center: {x: 11.459432, y: -0.75, z: 0}
+  m_Size: {x: 2, y: 12, z: 4}
+  m_Center: {x: 9.944445, y: -0.75, z: 0}
 --- !u!65 &65298668625472450
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -192,8 +192,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 24.918863, y: 2, z: 4}
-  m_Center: {x: 0, y: 7.10218, z: 0}
+  m_Size: {x: 21.88889, y: 2, z: 4}
+  m_Center: {x: 0, y: 6.25, z: 0}
 --- !u!65 &65345973046895356
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -213,8 +213,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 24.918863, y: 2, z: 4}
-  m_Center: {x: 0, y: -8.6021805, z: 0}
+  m_Size: {x: 21.88889, y: 2, z: 4}
+  m_Center: {x: 0, y: -7.75, z: 0}
 --- !u!114 &114958627567661392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,8 +281,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 13.20436, z: 4}
-  m_Center: {x: -10.209432, y: -1, z: 0}
+  m_Size: {x: 0.5, y: 11.5, z: 4}
+  m_Center: {x: -8.694445, y: -1, z: 0}
 --- !u!65 &65222862531779534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -302,8 +302,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 13.20436, z: 4}
-  m_Center: {x: 10.209432, y: -1, z: 0}
+  m_Size: {x: 0.5, y: 11.5, z: 4}
+  m_Center: {x: 8.694445, y: -1, z: 0}
 --- !u!65 &65681856416863340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -323,8 +323,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 20.918863, y: 0.5, z: 4}
-  m_Center: {x: 0, y: 5.85218, z: 0}
+  m_Size: {x: 17.88889, y: 0.5, z: 4}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1 &1919310479599546
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +337,8 @@ GameObject:
   - component: {fileID: 20599674064362618}
   - component: {fileID: 81193297031164782}
   - component: {fileID: 114777849153905310}
+  - component: {fileID: 4021437783108258088}
+  - component: {fileID: 1162367443211586226}
   m_Layer: 0
   m_Name: GameCamera
   m_TagString: MainCamera
@@ -353,7 +355,7 @@ Transform:
   m_GameObject: {fileID: 1919310479599546}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: 0, z: -12.013913}
+  m_LocalPosition: {x: 0, y: 0, z: -6.7837033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -392,7 +394,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 50
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -435,3 +437,80 @@ MonoBehaviour:
   blurIterations: 4
   blurType: 0
   blurShader: {fileID: 4800000, guid: f9d5fa183cd6b45eeb1491f74863cd91, type: 3}
+--- !u!114 &4021437783108258088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919310479599546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 8173c629209b91f4fa94a7cb6cb0c3c2, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!114 &1162367443211586226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919310479599546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 4051050489998520}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
